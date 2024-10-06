@@ -6,6 +6,7 @@
 (function () {
   "use strict";
 
+  let inProcess = false;
   let forms = document.querySelectorAll('.php-email-form');
 
   forms.forEach( function(e) {
@@ -50,10 +51,15 @@
   });
 
   function php_email_form_submit(thisForm, action, formData) {
+    if (inProcess)
+    {
+      return;
+    }
+    inProcess = true;
     fetch(action, {
       method: 'POST',
-      body: formData,
-      headers: {'X-Requested-With': 'XMLHttpRequest'}
+      body: formData
+      // headers: {'X-Requested-With': 'XMLHttpRequest'}
     })
     .then(response => {
       if( response.ok ) {
@@ -64,7 +70,8 @@
     })
     .then(data => {
       thisForm.querySelector('.loading').classList.remove('d-block');
-      if (data.trim() == 'OK') {
+      var dataValues = JSON.parse(data);
+      if (dataValues.result == 'success') {
         thisForm.querySelector('.sent-message').classList.add('d-block');
         thisForm.reset(); 
       } else {
@@ -73,6 +80,9 @@
     })
     .catch((error) => {
       displayError(thisForm, error);
+    })
+    .finally(() => {
+       inProcess = false;
     });
   }
 
