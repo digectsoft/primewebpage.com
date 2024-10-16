@@ -768,7 +768,7 @@ section,
 
 .section-title p {
   margin-bottom: 0;
-  text-align: left;
+  text-align: justify;
 }
 
 /*--------------------------------------------------------------
@@ -794,7 +794,7 @@ section,
   margin: 5px 0 10px 0;
   font-size: 20px;
   font-weight: 400;
-  text-align: left;
+  text-align: justify;
 }
 
 .hero .cta-btn {
@@ -872,6 +872,10 @@ section,
 .about .content ul h5 {
   font-size: 18px;
   font-weight: 700;
+}
+
+.about .content p {
+  text-align: justify;
 }
 
 .about .content ul p {
@@ -1228,6 +1232,7 @@ section,
 .testimonials .testimonial-item p {
   font-style: italic;
   margin: 0 auto 15px auto;
+  text-align: justify;
 }
 
 .testimonials .swiper-wrapper {
