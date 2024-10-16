@@ -1626,7 +1626,31 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Starter Section Section
+# Privacy Policy Section
+--------------------------------------------------------------*/
+.privacy-policy p {
+  font-size: 15px;
+}
+
+.privacy-policy ul {
+  list-style: none;
+  padding: 0;
+  font-size: 15px;
+}
+
+.privacy-policy ul li {
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+}
+
+.privacy-policy ul i {
+  margin-right: 8px;
+  color: var(--accent-color);
+}
+
+/*--------------------------------------------------------------
+# Starter Section
 --------------------------------------------------------------*/
 .starter-section {
   /* Add your styles here */
