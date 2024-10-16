@@ -780,7 +780,6 @@ section,
   position: relative;
   padding: 120px 0 60px 0;
   display: flex;
-  align-items: center;
 }
 
 .hero h2 {
@@ -795,6 +794,7 @@ section,
   margin: 5px 0 10px 0;
   font-size: 20px;
   font-weight: 400;
+  text-align: left;
 }
 
 .hero .cta-btn {
