@@ -72,7 +72,7 @@
       thisForm.querySelector('.loading').classList.remove('d-block');
       var dataValues = JSON.parse(data);
       if (dataValues.result == 'success') {
-        gtag_report_conversion('https://primewebpage.com');
+        gtag_report_conversion();
         thisForm.querySelector('.sent-message').classList.add('d-block');
         thisForm.reset(); 
       } else {
@@ -85,6 +85,18 @@
     .finally(() => {
        inProcess = false;
     });
+  }
+
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof (url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event',
+      'conversion',
+      { 'send_to': 'AW-858286224/-s9qCLKrhJcYEJDRoZkD', 'event_callback': callback });
+    return false;
   }
 
   function displayError(thisForm, error) {
