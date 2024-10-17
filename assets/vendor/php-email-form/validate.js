@@ -72,6 +72,7 @@
       thisForm.querySelector('.loading').classList.remove('d-block');
       var dataValues = JSON.parse(data);
       if (dataValues.result == 'success') {
+        gtag_report_conversion('https://primewebpage.com');
         thisForm.querySelector('.sent-message').classList.add('d-block');
         thisForm.reset(); 
       } else {
