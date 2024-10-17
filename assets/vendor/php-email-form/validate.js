@@ -87,15 +87,10 @@
     });
   }
 
-  function gtag_report_conversion(url) {
-    var callback = function () {
-      if (typeof (url) != 'undefined') {
-        window.location = url;
-      }
-    };
+  function gtag_report_conversion() {
     gtag('event',
       'conversion',
-      { 'send_to': 'AW-858286224/-s9qCLKrhJcYEJDRoZkD', 'event_callback': callback });
+      { 'send_to': 'AW-858286224/-s9qCLKrhJcYEJDRoZkD'});
     return false;
   }
 
